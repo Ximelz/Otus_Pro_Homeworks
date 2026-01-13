@@ -5,12 +5,12 @@
     /// </summary>
     public class Ink : Consumables, IMyCloneable<Ink>
     {
-        public Ink(string Color, Container Container) : base(Color) => this.Container = Container;
+        public Ink(string Color, InkContainer Container) : base(Color) => this.Container = Container;
 
         /// <summary>
         /// Емкость чернил.
         /// </summary>
-        public Container Container { get; private set; }
+        public InkContainer Container { get; private set; }
 
         #region Методы клонирования
         public override Ink MyClone() => new Ink(this.Color, this.Container);

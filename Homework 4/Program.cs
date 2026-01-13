@@ -7,7 +7,7 @@
             Pen pen = new Pen(14.2, "Черный");
             GelPen gel = new GelPen(14.6, "Желтый", new Refill("Синий", 0.7));
             BallpointPen ballpoint = new BallpointPen(13.7, "Красный", new Refill("Фиолетовый", 0.9));
-            FountainPen fountain = new FountainPen(14.5, "Металлический", new Ink("Черный", Container.Cartridge), FountainPenSize.F);
+            FountainPen fountain = new FountainPen(14.5, "Металлический", new Ink("Черный", InkContainer.Cartridge), FountainPenSize.F);
 
             Pencil pencil = new Pencil(12.4, "Желтый");
             Pencil blackPencilLead = new BlackPencilLeadPencil(12.1, "Серебрянный");
@@ -29,7 +29,7 @@
             Pen copyPen = new Pen(15.22, "Зеленый");
             GelPen copyGel = new GelPen(15.61, "Темно-зеленый", new Refill("Темно-синий", 0.75));
             BallpointPen copyBallpoint = new BallpointPen(13.74, "Красный", new Refill("Светло-фиолетовый", 0.86));
-            FountainPen copyFountain = new FountainPen(14.53, "Платиновый", new Ink("Светло-синий", Container.Bottle), FountainPenSize.M);
+            FountainPen copyFountain = new FountainPen(14.53, "Платиновый", new Ink("Светло-синий", InkContainer.Bottle), FountainPenSize.M);
 
             Pencil copyPencil = new Pencil(12.41, "Светло-желтый");
             Pencil copyBlackPencilLead = new BlackPencilLeadPencil(13.71, "Изумрудный");

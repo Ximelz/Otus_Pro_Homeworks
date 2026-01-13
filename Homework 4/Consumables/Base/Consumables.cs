@@ -5,32 +5,32 @@
     /// </summary>
     public class Consumables : IMyCloneable<Consumables>, ICloneable
     {
-        public Consumables(string color) => this.color = color;
+        public Consumables(string Color) => this.Color = Color;
 
         /// <summary>
         /// Цвет расходников.
         /// </summary>
-        public string color { get; private set; }
+        public string Color { get; private set; }
 
         #region Методы клонирования
         public virtual object Clone() => MyClone();
-        public virtual Consumables MyClone() => new Consumables(this.color);
+        public virtual Consumables MyClone() => new Consumables(this.Color);
         #endregion
 
         #region Переопределение вывода класса в строку
-        public override string ToString() => $"Цвет расходника: {color}\r\n";
+        public override string ToString() => $"Цвет расходника: {Color}\r\n";
         #endregion
 
         #region Переопределение метода сравнения данного объекта
         public override bool Equals(object obj)
         {
             if (obj is Consumables other)
-                return color == other.color;
+                return Color == other.Color;
 
             return false;
         }
 
-        public override int GetHashCode() => HashCode.Combine(color);
+        public override int GetHashCode() => HashCode.Combine(Color);
         #endregion
     }
 }

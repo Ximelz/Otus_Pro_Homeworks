@@ -3,12 +3,12 @@
     /// <summary>
     /// Графитовый карандаш.
     /// </summary>
-    public class BlackleadPencil : Pencil, IMyCloneable<BlackleadPencil>, ICloneable
+    public class BlackPencilLeadPencil : Pencil, IMyCloneable<BlackPencilLeadPencil>, ICloneable
     {
-        public BlackleadPencil(double penLength, string penColor) : base(penLength, penColor) { }
+        public BlackPencilLeadPencil(double PenLength, string PenColor) : base(PenLength, PenColor) { }
 
         #region Методы клонирования
-        public override BlackleadPencil MyClone() => new BlackleadPencil(this.length, this.color);
+        public override BlackPencilLeadPencil MyClone() => new BlackPencilLeadPencil(this.Length, this.Color);
         public override object Clone() => MyClone();
         #endregion
 
@@ -19,7 +19,7 @@
         #region Переопределение метода сравнения данного объекта
         public override bool Equals(object obj)
         {
-            if (obj is BlackleadPencil other)
+            if (obj is BlackPencilLeadPencil other)
                 return base.Equals(other);
 
             return false;

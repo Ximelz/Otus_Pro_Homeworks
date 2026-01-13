@@ -3,33 +3,32 @@
     /// <summary>
     /// Стержень.
     /// </summary>
-    public class Refill : Consumables, IMyCloneable<Refill>, ICloneable
+    public class Refill : Consumables, IMyCloneable<Refill>
     {
-        public Refill(string color, double pointSize) : base(color) => this.pointSize = pointSize;
+        public Refill(string Color, double PointSize) : base(Color) => this.PointSize = PointSize;
 
         /// <summary>
         /// Толщина линии стержня.
         /// </summary>
-        public double pointSize { get; private set; }
+        public double PointSize { get; private set; }
 
         #region Методы клонирования
-        public override Refill MyClone() => new Refill(this.color, this.pointSize);
-        public override object Clone() => MyClone();
+        public override Refill MyClone() => new Refill(this.Color, this.PointSize);
         #endregion
 
         #region Переопределение вывода класса в строку
-        public override string ToString() => $"Тип расходника: стержень ручки.\r\nТолщина линии: {pointSize} мм.\r\n{base.ToString()}";
+        public override string ToString() => $"Тип расходника: стержень ручки.\r\nТолщина линии: {PointSize} мм.\r\n{base.ToString()}";
         #endregion
 
         #region Переопределение метода сравнения данного объекта
         public override bool Equals(object obj)
         {
             if (obj is Refill other)
-                return pointSize == other.pointSize && base.Equals(other);
+                return PointSize == other.PointSize && base.Equals(other);
 
             return false;
         }
-        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), pointSize);
+        public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), PointSize);
         #endregion
     }
 }

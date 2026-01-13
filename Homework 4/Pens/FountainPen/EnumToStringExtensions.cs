@@ -20,8 +20,8 @@
         /// </summary>
         /// <param name="container">Тип емкости.</param>
         /// <returns>Тип емкости на русском.</returns>
-        public static string GetString(this InkContainer container) => container switch {
-                                                                                 InkContainer.Bottle => "Баночка",
-                                                                                 InkContainer.Cartridge => "Картридж" };
+        public static string GetString(this Container container) => container switch {
+                                                                                 Container.Bottle => "Баночка",
+                                                                                 Container.Cartridge => "Картридж" };
     }
 }

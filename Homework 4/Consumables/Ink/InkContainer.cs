@@ -3,7 +3,7 @@
     /// <summary>
     /// Тип емкости чернил.
     /// </summary>
-    public enum InkContainer
+    public enum Container
     {
         Bottle,
         Cartridge

@@ -10,40 +10,31 @@ namespace Homework_3
         public long GetSumm(int[] intArray)
         {
             int cores = Environment.ProcessorCount;
-            List<int[]> arrays = ArrayFragmentation(intArray, cores);
-            List<Thread> threads = new List<Thread>();
+            Thread[] threads = new Thread[cores];
             object lockObj = new();
             int result = 0;
+            int chunkSize = intArray.Length / cores;
 
-            foreach (int[] array in arrays)
+            for (int i = 0; i < cores; i++)
             {
-                Thread thread = new(() =>
-                                         {
-                                             lock (lockObj)
-                                             {
-                                                 result += array.Sum();
-                                             }
-                                          });
-                threads.Add(thread);
-                thread.Start();
+                int currentIndex = i * chunkSize;
+                int end = (i == cores - 1) ? intArray.Length : currentIndex + chunkSize;
+
+                threads[i] = new(() =>
+                {
+                    int tempSumm = 0;
+
+                    for (int j = currentIndex; j < end; j++)
+                        tempSumm += intArray[j];
+
+                    lock (lockObj)
+                        result += tempSumm;
+                });
+
+                threads[i].Start();
             }
 
             foreach (Thread t in threads) t.Join();
-            return result;
-        }
-
-        private List<int[]> ArrayFragmentation(int[] array, int count)
-        {
-            List<int[]> result = new List<int[]>();
-            int arraysCount = array.Length / count;
-            int currentIndex = 0;
-
-            for (int i = 0; i < count - 1; i++)
-            {
-                result.Add(array.Skip(currentIndex).Take(arraysCount).ToArray());
-                currentIndex += arraysCount;
-            }
-            result.Add(array.Skip(currentIndex).ToArray());
             return result;
         }
 

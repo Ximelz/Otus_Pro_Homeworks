@@ -9,11 +9,14 @@
                 EnumerationFiles getFiles = new EnumerationFiles();
                 getFiles.FileFound += SendMessage;
                 getFiles.StartEnumeration(path);
-                Console.WriteLine("Перебор файлов завершен");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Перебор файлов завершен");
             }
         }
         public static int SendMessage(FileArgs e)

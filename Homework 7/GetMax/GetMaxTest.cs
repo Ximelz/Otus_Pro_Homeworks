@@ -1,4 +1,6 @@
-﻿namespace Homework_7
+﻿using System.Text;
+
+namespace Homework_7
 {
     public class GetMaxTest
     {
@@ -15,11 +17,11 @@
 
                 for (int i = 0; i < 100; i++)
                 {
-                    string str = "";
+                    StringBuilder sb = new StringBuilder();
                     for (int j = 0; j < random.Next(1, 30); j++)
-                        str += "kioa";
+                        sb.Append("kioa");
 
-                    strList.Add(new TestConvertString() { x = str });
+                    strList.Add(new TestConvertString() { x = sb.ToString() });
                 }
 
                 IEnumerable<TestConvertInt> intCollection = intsList;

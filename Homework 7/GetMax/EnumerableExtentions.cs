@@ -14,6 +14,9 @@ namespace Homework_7
             if (!enumirator.MoveNext())
                 throw new ArgumentNullException("Коллекция пуста!");
 
+            if (enumirator.Current is not T)
+                throw new Exception("Неверный тип коллекции!");
+
             T result = (T)enumirator.Current;
             float max = convertToNumber(result);
             while (enumirator.MoveNext())
@@ -35,6 +38,9 @@ namespace Homework_7
 
             if (!enumirator.MoveNext())
                 throw new ArgumentNullException("Коллекция пуста!");
+
+            if (enumirator.Current is not T)
+                throw new Exception("Неверный тип коллекции!");
 
             T result = (T)enumirator.Current;
             float max = convertToNumber(result);

@@ -1,10 +1,14 @@
 ﻿namespace Homework_7
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            GetMaxTest.StartTest();
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine("Введите путь к папке с файлами:");
+            var path = Console.ReadLine();
+            EnumerationFilesTest.StartTest(path!);
         }
     }
 }

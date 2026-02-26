@@ -16,7 +16,7 @@
                 Console.WriteLine(ex.Message);
             }
         }
-        public static int SendMessage(object sender, FileArgs e)
+        public static int SendMessage(FileArgs e)
         {
             Console.WriteLine($"File: {e.fileName}");
             Console.WriteLine("Введите \"Stop\" для завершения перебора:");

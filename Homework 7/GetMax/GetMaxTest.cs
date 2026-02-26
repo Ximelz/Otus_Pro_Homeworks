@@ -18,7 +18,8 @@ namespace Homework_7
                 for (int i = 0; i < 100; i++)
                 {
                     StringBuilder sb = new StringBuilder();
-                    for (int j = 0; j < random.Next(1, 30); j++)
+                    var strLength = random.Next(1, 30);
+                    for (int j = 0; j < strLength; j++)
                         sb.Append("kioa");
 
                     strList.Add(new TestConvertString() { x = sb.ToString() });
